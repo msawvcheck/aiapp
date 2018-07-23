@@ -1,0 +1,34 @@
+{% extends "sanction_search_t/header.html" %}
+{% block content %}
+
+<p>This result of OFAC search.
+
+<hr>
+
+
+<table cellspacing="10" align = "left">
+  <tbody>
+    <tr>
+    <th><b>NAME</b></th>
+    <th><b>ADDRESS</b></th>
+    <th><b>TYPE</b></th>
+    <th><b>PROGRAM</b></th>
+    <th><b>LIST</b></th>
+    <th><b>SCORE</b></th>
+
+
+   
+  </tr>
+    {% for pl in ofac_table %}
+    <tr>
+      {% for l in pl%}
+         <td>{{l}}</td>
+      {% endfor %} 
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</p>
+
+{% endblock %}

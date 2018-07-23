@@ -1,0 +1,30 @@
+{% extends "sanction_search_t/header.html" %}
+{% block content %}
+
+<p>This result of doj search.
+
+<hr>
+
+
+<table cellspacing="10" align = "left">
+  <tbody>
+    <tr>
+    <th><b>URL</b></th>
+    <th><b>NAME</b></th>
+    <th><b>AGE</b></th>
+    <th><b>PLACE</b></th>
+   
+  </tr>
+    {% for pl in doj_table %}
+    <tr>
+      {% for l in pl%}
+         <td>{{l}}</td>
+      {% endfor %} 
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</p>
+
+{% endblock %}
