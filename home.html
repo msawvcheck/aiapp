@@ -1,0 +1,32 @@
+{% extends "sanction_search_t/header.html" %}
+{% block content %}
+<p>This is a website to do sanction search.</p>
+
+<form target='_blank' action='actionUrl_doj' method='GET' >
+<button  type="submit">DOJ</button>
+</form>
+
+<hr>
+
+<form target='_blank' action='actionUrl_ofac' method='GET' >
+<button  type="submit">OFAC</button>
+</form>
+
+<hr>
+
+<form  target='_blank' action='ofac_name' method ='POST' >
+  {% csrf_token %}
+  Name for OFAC search: <input type="text" name="fname"><br>
+  <input type="submit" value="Submit">
+</form>
+
+<hr>
+
+<form  target='_blank' action='doj_name' method ='POST' >
+  {% csrf_token %}
+  Name for DOJ search: <input type="text" name="fname"><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+{% endblock %}
